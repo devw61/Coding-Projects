@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Borel&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #153677, #4e085f);
+    padding: 10px;
+}
+
+.todo-app {
+    width: 100%;
+    max-width:540px;
+    background-color: white;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+
+.todo-app h2 {
+    color: #002765;
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.todo-app h2 i {
+    color: #153677;
+    margin-left: 10px;
+}
+
+.row {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-weight: 14px;
+    font-size: 17px;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background-color: #ff5945;
+    color:white;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 14px 200px 12px 60px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 38px;
+    width: 38px;
+    border-radius: 50%;
+    background-image: url(radio-circle-regular-24.png);
+    background-size: cover;
+    background-position: center;
+    top: 4px;
+    left: 5px;
+}
+
+ul li.checked {
+    color: black;
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    background-image: url(radio-circle-marked-regular-24.png);
+}
+
+ul li span {
+    position: absolute;
+    right:5px;
+    top:0;
+    width: 40px;
+    font-size: 22px;
+    color: black;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+ul li span:hover {
+    background: grey;
+}
