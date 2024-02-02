@@ -22,9 +22,9 @@ html {
 }
 
 body {
-    background: linear-gradient(to bottom, #210240, #4a0035) no-repeat;
+    background: linear-gradient(to top, #210240, #730052) no-repeat;
     min-height: 100vh;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
 }
 
 .navbar {
@@ -36,7 +36,10 @@ body {
     display:flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #210240;
+    filter: drop-shadow(#0808082d 0rem 0.5rem .1rem);
     z-index: 100;
+
 }
 
 .navbar img {
@@ -71,7 +74,7 @@ body {
     width:80%;
     height: 80%;
     color:white;
-
+    overflow-y: hidden;
 }
 
 .main h2{
@@ -93,6 +96,7 @@ body {
 
 .main p {
     font-size: 20px;
+    font-weight: 300;
     width:500px;
     height: auto;
     transform: translateY(70%);
@@ -105,33 +109,26 @@ body {
     margin-top:24vh;
     width: 50vh;
     height: 50vh;
-    border-radius: 50%;
+    border-radius: 30% 70% 43% 57% / 59% 39% 61% 41%;
     object-fit: cover;
-    filter: drop-shadow(rgb(251, 142, 0) 0.5rem 0.5rem 20rem);
+    filter: drop-shadow(rgba(251, 142, 0, 0.416) 0.5rem 0.5rem 3rem);
     background: white;
 }
 
 .works {
     position: relative;
     width: 100vw;
-    height: 70vh;
-    margin: 10rem;
-    /* background-color: #fff; */
-}
-
-.works h3{
-    position:relative;
-    left: 3rem;
-    font-size: 50px;
-    color: var(--text_pink);
-    margin-bottom: 4rem;
-    font-weight: 900;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to bottom, #210240, #210240) no-repeat;
 }
 
 .works_links_container {
     position: relative;
     width: 80%;
-    height: 80%;
+    height: 60%;
+    left:10%;
+    top: 20%;
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: 33% 33% 33%;
@@ -155,6 +152,7 @@ body {
     height: 80%;
     transition: .5s;
 }
+
 .works_img img:hover {
     object-fit:cover;
     border-radius: 0px;
@@ -163,8 +161,18 @@ body {
     transform: translate(-1.5%,-1.5%);
 }
 
+.works h3{
+    position:absolute;
+    left: 6rem;
+    top: 7%;
+    font-size: 50px;
+    color: var(--text_purple);
+    margin-bottom: 4rem;
+    font-weight: 900;
+}
+
 .works_img p {
-    color: var(--text_pink);
+    color: var(--text_purple);
     font-size: 1.5rem;
     position: relative;
     text-align: center;
@@ -173,9 +181,38 @@ body {
     font-weight: 300;
 }
 
+.about {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, var(--dark_purple), #800080) no-repeat; /* FF6F61 */
+}
+
+.about h3 {
+    position: absolute;
+    left: 6rem;
+    top: 20%;
+    font-size: 50px;
+    color: var(--text_pink);
+    margin-bottom: 4rem;
+    font-weight: 900;
+}
+
+.about p {
+    position: absolute;
+    text-align: center;
+    top:40%;
+    margin: 0 8rem ;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--text_pink);
+}
+
 @media (max-width:1300px) {
-    .works_links_container {
-        /* background-color: antiquewhite; */
+    .main_container {
+        position: relative;
+        display: flex;
+        justify-content: center;
     }
 
     .main {
@@ -185,16 +222,17 @@ body {
         height: 75%;
         display: flex;
         align-items: center;
+        justify-content: center;
         /* background-color: black; */
     }
 
     .main h2 {
         font-size: 30px;
         margin-bottom: 10px;
-        left: 300px;
+        text-align: center;
         /* background-color: aqua; */
         font-family: 'Ubuntu', sans-serif;
-        width:450px;
+        width:100%;
         font-size: 45px;
         display: flex;
         justify-content: center;
@@ -203,11 +241,12 @@ body {
 
     .main h5 {
         /* position: relative; */
-        width: 100vw;
+        width: 90vw;
         height: 5vh;
         display: flex;
+        justify-content: center;
         margin-top: 100px;
-        transform: translateX(5.8%);
+        /* transform: translateX(5.8%); */
         /* background-color: aqua; */
     }
 
@@ -215,19 +254,42 @@ body {
         position: absolute;
         width:45%;
         height:50%;
-        right: 5%;
+        font-size: 25px;
+        margin-top: 350px;
         transform: translateY(0);
+        text-align: center;
         display: flex;
         align-items: center;
-        /* text-align: justify; */
+        justify-content: center;
         /* background-color: aqua; */
     }
-
     
     .main_pic {
-        margin-right: 40%;
+        float: right;
+        margin-right: 0;
+        margin-top: 0;
+        position: absolute;
         margin-top: 15vh;
         width: 30vh;
         height: 30vh;
     }
+
+    .works_links_container {
+        display: grid;
+        height: 80%;
+        grid-template-rows: 33% 33% 33%;
+        grid-template-columns: auto;
+    }
+
+    .works_img p {
+        color: rgb(204, 204, 204);
+        margin-top: 15px;
+    }
+
+    .works_img img {
+        width: 100%;
+        height: 200%;
+        transition: .5s;
+    }
+
 }
