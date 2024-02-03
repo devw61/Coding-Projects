@@ -1,4 +1,4 @@
-const words = ["Software Engineer", "Student", "Nerd"]
+const words = ["Software Engineer", "Student", "Nerd",  "Programmer"]
 const dynameText = document.querySelector(".main h5");
 
 let word_index = 0;
