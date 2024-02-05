@@ -9,12 +9,12 @@
     </head>
     <body>
         <header class="navbar">
-            <a href="#" class="name"><img src="./web-icon.jpeg" width="40" height="40"></a>
+            <a href="#main" class="name"><img src="./web-icon.jpeg" width="40" height="40"></a>
             <div class="navbar_links">
                 <a href="#main">Home</a>
                 <a href="#About">About</a>
                 <a href="#works">Projects</a>
-                <a href="#">Contact</a>
+                <a href="#contact">Contact</a>
             </div>
         </header>
         
@@ -22,7 +22,7 @@
             <main class="main">
                 <h2>Devin Wingfield</h2>
                 <h5></h5>
-                <p>I am currently studying at the University of Texas - Arlington to enhance my coding abilities and to further my connection in the computer science field</p>
+                <!-- <p>I am currently studying at the University of Texas - Arlington to enhance my coding abilities and to further my connection in the computer science field</p> -->
             </main>
             <!-- <div class="main_img_conatiner"> -->
                 <img src="./3141BEAB-2BBA-4742-870C-C4921509979D.jpeg"  class="center main_pic">
@@ -55,5 +55,49 @@
             adapt to any challenge and advance my knowledge of programming all while having a positive effect on the people around
             me.</p>
         </div>
+
+        <div class="contact" id="contact">
+            <form action="">
+                <div class="message_icon">
+                    <i class="bi bi_telegram"></i>
+                    <span>Message</span>
+                </div>
+
+                <div id="input_field">
+                    <i class="bi bi_person"></i>
+                    <input type="text" placeholder="Name" name="Name">
+                </div>
+
+                <div id="input_field">
+                    <i class="bi bi_telephone"></i>
+                    <input type="text" placeholder="Phone No." name="Phone">
+                </div>
+
+                <div id="input_field">
+                    <i class="bi bi_envelope"></i>
+                    <input type="text" placeholder="Email Address" name="Email">
+                </div>
+
+                <div id="input_field">
+                    <i class="bi bi_chat-right-dots"></i>
+                    <textarea name="Message" placeholder="Message" rows="10"></textarea>
+                </div>
+
+                <!-- <input type="submit" value="submit" class="send-btn"> -->
+                <!-- check if js animation works -->
+                <div class="main">
+                    <div class="button">
+                        <div class="text">Submit</div>
+                    </div>
+        
+                    <div class="progress-bar"></div>
+                    <svg x="0px" y="0px" viewBox="0 0 25 30" style="enable-background:new 0 0 25 30;">
+                        <path class="check" class="st0" d="M2,19.2C5.9,23.6,9.4,28,9.4,28L23,2" />
+                    </svg>
+                </div>
+            </form>
+            
+        </div>
+        <script src="./node_modules/animejs/lib/anime.min.js"></script>
     </body>
 </html>
