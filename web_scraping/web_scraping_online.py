@@ -9,7 +9,7 @@ while True:
             raise ValueError
         break
     except ValueError:
-        print("Please enter a valid year between 1950 and 2024")
+        print(f"Please enter a valid year between 1950 and {datetime.datetime.now().year}")
 
 # get driver info 
 website_request = requests.get(f'https://www.formula1.com/en/results.html/{year}/drivers.html').text 
@@ -17,19 +17,21 @@ _soup = BeautifulSoup(website_request, 'html.parser')
 info = _soup.find_all('p', class_ = "f1-text font-titillium tracking-normal font-normal non-italic normal-case leading-none f1-text__micro text-fs-15px")
 length = len(info)//5
 
+if length == 0:
+    print(f"The {datetime.datetime.now().year} season has not started yet.")
+    exit()
+
 #printing template
 def print_result(): 
-    max_name = max_org = 0
-    for i in range(length):
-        name = info[i*5+1].text[:-3]
-        org = info[i*5+3].text
-        if len(name) > max_name: max_name = len(name)
-        if len(org) > max_org: max_org = len(org)
+    names = [info[i*5+1].text[:-3] for i in range(length)]
+    orgs = [info[i*5+3].text for i in range(length)]
+    max_name = max(len(name) for name in names)
+    max_org = max(len(org) for org in orgs)
     
     for i in range(length):
-        name = info[i*5+1].text[:-3]
+        name = names[i]
         point = info[i*5+4].text
-        org = info[i*5+3].text
+        org = orgs[i]
         print(f"NAME: {name:<{max_name}} | ORG: {org:<{max_org}} | POINTS: {point}")
 
 print_result()
