@@ -17,8 +17,11 @@ _soup = BeautifulSoup(website_request, 'html.parser')
 info = _soup.find_all('p', class_ = "f1-text font-titillium tracking-normal font-normal non-italic normal-case leading-none f1-text__micro text-fs-15px")
 length = len(info)//5
 
-if length == 0:
+if length == 0 and year == datetime.datetime.now().year:
     print(f"The {datetime.datetime.now().year} season has not started yet.")
+    exit()
+elif length == 0:
+    print(f"No results found for {year}.")
     exit()
 
 #printing template
